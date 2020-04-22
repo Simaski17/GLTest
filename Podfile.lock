@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.0.5)
+  - Promises (2.0.4)
+  - SDWebImage (5.7.3):
+    - SDWebImage/Core (= 5.7.3)
+  - SDWebImage/Core (5.7.3)
+  - SVDismissableProgressHUD (0.0.5):
+    - SVProgressHUD (= 2.2.5)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - Promises
+  - SDWebImage
+  - SVDismissableProgressHUD (~> 0.0.5)
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Promises
+    - SDWebImage
+    - SVDismissableProgressHUD
+    - SVProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Promises: fcb83dc6be43294a8d30c343636ed1a45a8d2e0a
+  SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
+  SVDismissableProgressHUD: 9965d91ea2ff38bdda0f69c998ec84a53044cd40
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 011390cd113b443f0380d6a3bb0e29eeacf56758
+
+COCOAPODS: 1.9.1

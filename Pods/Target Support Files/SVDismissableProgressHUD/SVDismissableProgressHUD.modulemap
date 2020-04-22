@@ -1,0 +1,6 @@
+framework module SVDismissableProgressHUD {
+  umbrella header "SVDismissableProgressHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
