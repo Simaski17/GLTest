@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItunesTableViewCell: UITableViewCell {
 
@@ -26,6 +27,8 @@ class ItunesTableViewCell: UITableViewCell {
 
     func setup(event: [Result], index: IndexPath) {
         self.songName.text = event[index.row].trackName
+        songImage.sd_setImage(with: URL(string: event[index.row].artworkUrl100))
+
     }
     
 }
