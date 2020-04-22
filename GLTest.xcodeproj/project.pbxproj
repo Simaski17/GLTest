@@ -101,14 +101,9 @@
 		F2649D3124507FA8003BE6F3 /* GLTest */ = {
 			isa = PBXGroup;
 			children = (
-				F2649D3224507FA8003BE6F3 /* AppDelegate.swift */,
-				F2649D3424507FA8003BE6F3 /* SceneDelegate.swift */,
-				F2649D3624507FA8003BE6F3 /* ViewController.swift */,
-				F2649D3824507FA8003BE6F3 /* Main.storyboard */,
-				F2649D3E24507FA8003BE6F3 /* Assets.xcassets */,
-				F2649D4024507FA8003BE6F3 /* LaunchScreen.storyboard */,
-				F2649D4324507FA8003BE6F3 /* Info.plist */,
-				F2649D3B24507FA8003BE6F3 /* GLTest.xcdatamodeld */,
+				F2649D6724508B84003BE6F3 /* Application */,
+				F2649D6624508B7E003BE6F3 /* Base */,
+				F2649D6524508B76003BE6F3 /* Resources */,
 			);
 			path = GLTest;
 			sourceTree = "<group>";
@@ -129,6 +124,51 @@
 				F2649D5924507FA8003BE6F3 /* Info.plist */,
 			);
 			path = GLTestUITests;
+			sourceTree = "<group>";
+		};
+		F2649D6524508B76003BE6F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2649D6924508BFF003BE6F3 /* Images */,
+				F2649D6824508BF9003BE6F3 /* Colors */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2649D6624508B7E003BE6F3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F2649D3424507FA8003BE6F3 /* SceneDelegate.swift */,
+				F2649D3224507FA8003BE6F3 /* AppDelegate.swift */,
+				F2649D4024507FA8003BE6F3 /* LaunchScreen.storyboard */,
+				F2649D4324507FA8003BE6F3 /* Info.plist */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F2649D6724508B84003BE6F3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F2649D3624507FA8003BE6F3 /* ViewController.swift */,
+				F2649D3824507FA8003BE6F3 /* Main.storyboard */,
+				F2649D3B24507FA8003BE6F3 /* GLTest.xcdatamodeld */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F2649D6824508BF9003BE6F3 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		F2649D6924508BFF003BE6F3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F2649D3E24507FA8003BE6F3 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
