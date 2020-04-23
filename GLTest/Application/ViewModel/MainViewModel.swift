@@ -22,8 +22,8 @@ class MainViewModel {
         return arrSongs.count
     }
     
-    func getListSongs(term: String, offset: Int){
-        NetworkManager.shared.getListSongs(term: term, offset: offset).then({
+    func getListSongs(term: String, offset: Int, next: Bool){
+        NetworkManager.shared.getListSongs(term: term, offset: offset, next: next).then({
             self.arrSongs = $0
             self.delegate?.reloadData()
         }).catch({

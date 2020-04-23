@@ -58,15 +58,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "segueDetail", sender: viewModel.arrSongs[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.arrSongs.count - 1 {
-            print("FINAL LISTA")
-            print(self.searchTerm)
-            print(offset)
-            if nextItem {
-                offset = offset + 20
-                viewModel.getListSongs(term: self.searchTerm, offset: offset)
-                nextItem = false
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == tableViewMain{
+            
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+            {
+                if nextItem {
+                    offset = offset + 20
+                    viewModel.getListSongs(term: self.searchTerm, offset: offset, next: false)
+                    nextItem = false
+                    hud.textLabel.text = "Cargando..."
+                    hud.show(in: self.view)
+                    hud.position = .bottomCenter
+                }
             }
         }
     }
@@ -89,9 +93,10 @@ extension ViewController: UISearchBarDelegate {
         if searchBar.text! != self.searchTerm{
             self.searchTerm = searchBar.text!
             offset = 0
+            viewModel.getListSongs(term: searchBar.text!, offset: offset, next: true)
+        } else {
+            viewModel.getListSongs(term: searchBar.text!, offset: offset, next: false)
         }
-        
-        viewModel.getListSongs(term: searchBar.text!, offset: offset)
         self.view.endEditing(true)
         
         hud.textLabel.text = "Cargando..."

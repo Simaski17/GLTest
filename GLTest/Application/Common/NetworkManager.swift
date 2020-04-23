@@ -22,14 +22,16 @@ class NetworkManager {
     }
     
     var arrSongs = [Result]()
-    var endTerm = "init"
     
     
-    public func getListSongs(term: String, offset: Int)->Promise<[Result]> {
+    public func getListSongs(term: String, offset: Int, next: Bool)->Promise<[Result]> {
         return Promise<[Result]>(work: {
             fullfill,reject in
             
-            if term != self.endTerm{
+            
+            if next{
+                print("TERMINO 123")
+                print(term)
                 self.arrSongs.removeAll()
             }
             
