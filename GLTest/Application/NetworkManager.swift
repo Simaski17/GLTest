@@ -23,13 +23,13 @@ class NetworkManager {
     
     var arrSongs = [Result]()
     
-    public func getListSongs()->Promise<[Result]> {
+    public func getListSongs(term: String)->Promise<[Result]> {
         return Promise<[Result]>(work: {
             fullfill,reject in
             
             
             let parameters: Parameters = [
-            "term": "Katy Perry"
+            "term": term
             ]
             
             AFWrapper.requestGETURL("https://itunes.apple.com/search?mediaType=music&limit=20", parameters: parameters, success: { (responseObject) in
@@ -57,5 +57,42 @@ class NetworkManager {
             
         })
     }
+    
+    public func getListSongsAlbum(term: String)->Promise<[Result]> {
+        return Promise<[Result]>(work: {
+            fullfill,reject in
+            
+            
+            let parameters: Parameters = [
+            "term": term
+            ]
+            
+            AFWrapper.requestGETURL("https://itunes.apple.com/search?entity=song", parameters: parameters, success: { (responseObject) in
+                for aResult in responseObject["results"] as! [Any] {
+                    do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: aResult, options: .prettyPrinted)
+                        let reqJSONStr = String(data: jsonData, encoding: .utf8)
+                        let data = reqJSONStr?.data(using: .utf8)
+                        let jsonDecoder = JSONDecoder()
+                        let aResultSong = try jsonDecoder.decode(Result.self, from: data!)
+                        self.arrSongs.append(aResultSong)
+                    }
+                    catch {
+                        reject(error)
+                        return
+                    }
+                }
+                fullfill(self.arrSongs)
+                return
+            }) { (error) in
+                print(error.localizedDescription)
+                reject(error)
+                return
+            }
+            
+        })
+    }
+    
+    
     
 }

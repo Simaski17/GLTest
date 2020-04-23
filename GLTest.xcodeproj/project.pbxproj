@@ -23,6 +23,8 @@
 		F2649D6F245099E3003BE6F3 /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2649D6E245099E3003BE6F3 /* AFWrapper.swift */; };
 		F2649D71245099FC003BE6F3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2649D70245099FC003BE6F3 /* NetworkManager.swift */; };
 		F2649D7324509A30003BE6F3 /* ItunesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2649D7224509A30003BE6F3 /* ItunesTableViewCell.swift */; };
+		F280121A2450B05000E3C793 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28012192450B05000E3C793 /* DetailViewController.swift */; };
+		F280121C24512AE400E3C793 /* DetailAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280121B24512AE400E3C793 /* DetailAlbumTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		F2649D6E245099E3003BE6F3 /* AFWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
 		F2649D70245099FC003BE6F3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F2649D7224509A30003BE6F3 /* ItunesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItunesTableViewCell.swift; path = "/Users/jimmyhernandez/Documents/Cursos/platzi/iOS/Desarrollo de Aplicaciones 2018/GLTest/GLTest/Application/ItunesTableViewCell.swift"; sourceTree = "<absolute>"; };
+		F28012192450B05000E3C793 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F280121B24512AE400E3C793 /* DetailAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 				F2649D6C245099A9003BE6F3 /* ItunesResponse.swift */,
 				F2649D6E245099E3003BE6F3 /* AFWrapper.swift */,
 				F2649D70245099FC003BE6F3 /* NetworkManager.swift */,
+				F28012192450B05000E3C793 /* DetailViewController.swift */,
+				F280121B24512AE400E3C793 /* DetailAlbumTableViewCell.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -462,7 +468,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F280121A2450B05000E3C793 /* DetailViewController.swift in Sources */,
 				F2649D3724507FA8003BE6F3 /* ViewController.swift in Sources */,
+				F280121C24512AE400E3C793 /* DetailAlbumTableViewCell.swift in Sources */,
 				F2649D3324507FA8003BE6F3 /* AppDelegate.swift in Sources */,
 				F2649D3D24507FA8003BE6F3 /* GLTest.xcdatamodeld in Sources */,
 				F2649D3524507FA8003BE6F3 /* SceneDelegate.swift in Sources */,

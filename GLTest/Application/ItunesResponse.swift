@@ -43,4 +43,5 @@ struct Result: Codable {
         case previewURL = "previewUrl"
         case artworkUrl30, artworkUrl60, artworkUrl100, collectionPrice, trackPrice, releaseDate, collectionExplicitness, trackExplicitness, discCount, discNumber, trackCount, trackNumber, trackTimeMillis, country, currency, primaryGenreName, isStreamable
     }
+    
 }
