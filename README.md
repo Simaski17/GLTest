@@ -9,8 +9,10 @@ Se utilizo
 * SDWebImage para el manejo asincrono de imagenes.
 * JGProgressHUD para los cuadros de dialogos al solicitar y cargar información.
 
+Se utilizo mvvm
+
 Para los manejos de errores pensaba utilizar un manager donde declararia no solo el error 500.
-Sino todos los errores qu epuedan presentarse en la app y desde ahí tomarlos cuando se requieran.
+Sino todos los errores que puedan presentarse en la app y desde ahí tomarlos cuando se requieran.
 
 Para la persistencia la idea era utulizar coredata e ir llenando la tabla y desde ahí llenando los datos en la app y manteniendo las busquedas anteriores.
 
