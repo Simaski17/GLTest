@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import JGProgressHUD
 
 class DetailViewController: UIViewController {
 
@@ -17,27 +18,34 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tableViewMain: UITableView!
     
     var arrSongsDetail = [Result]()
+    let hud = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableViewMain.isHidden = true
         albumName.text = arrSongsDetail[0].collectionName
         artistName.text = arrSongsDetail[0].artistName
         albumImage.sd_setImage(with: URL(string: arrSongsDetail[0].artworkUrl100))
         
         
         NetworkManager.shared.getListSongsAlbum(term: "\(arrSongsDetail[0].artistName) \(arrSongsDetail[0].collectionName)").then({
-            print("RESULTADO ALBUM")
-            print($0)
             self.arrSongsDetail = $0
+            self.tableViewMain.isHidden = false
             self.tableViewMain.reloadData()
+            self.hud.dismiss()
         }).catch({
             print($0)
         })
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        hud.textLabel.text = "Cargando..."
+        hud.show(in: self.view)
+        hud.position = .bottomCenter
+    }
 
     /*
     // MARK: - Navigation
