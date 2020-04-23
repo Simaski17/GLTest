@@ -7,7 +7,7 @@ target 'GLTest' do
 
   # Pods for GLTest
   pod 'Promises'
-  pod 'SVDismissableProgressHUD','~>0.0.5'
+  pod 'JGProgressHUD'
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SDWebImage'

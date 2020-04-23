@@ -22,14 +22,20 @@ class NetworkManager {
     }
     
     var arrSongs = [Result]()
+    var endTerm = "init"
     
-    public func getListSongs(term: String)->Promise<[Result]> {
+    
+    public func getListSongs(term: String, offset: Int)->Promise<[Result]> {
         return Promise<[Result]>(work: {
             fullfill,reject in
             
+            if term != self.endTerm{
+                self.arrSongs.removeAll()
+            }
             
             let parameters: Parameters = [
-            "term": term
+                "term": term,
+                "offset": offset
             ]
             
             AFWrapper.requestGETURL("https://itunes.apple.com/search?mediaType=music&limit=20", parameters: parameters, success: { (responseObject) in
@@ -64,8 +70,10 @@ class NetworkManager {
             
             
             let parameters: Parameters = [
-            "term": term
+                "term": term
             ]
+            
+            var arrSongsAlbum = [Result]()
             
             AFWrapper.requestGETURL("https://itunes.apple.com/search?entity=song", parameters: parameters, success: { (responseObject) in
                 for aResult in responseObject["results"] as! [Any] {
@@ -75,14 +83,14 @@ class NetworkManager {
                         let data = reqJSONStr?.data(using: .utf8)
                         let jsonDecoder = JSONDecoder()
                         let aResultSong = try jsonDecoder.decode(Result.self, from: data!)
-                        self.arrSongs.append(aResultSong)
+                        arrSongsAlbum.append(aResultSong)
                     }
                     catch {
                         reject(error)
                         return
                     }
                 }
-                fullfill(self.arrSongs)
+                fullfill(arrSongsAlbum)
                 return
             }) { (error) in
                 print(error.localizedDescription)

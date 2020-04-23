@@ -7,3 +7,30 @@
 //
 
 import Foundation
+ 
+protocol DetailViewModelDelegate {
+    func reloadData()
+}
+
+class DetailViewModel {
+    
+   var delegate: DetailViewModelDelegate?
+   var arrSongsAlbumDetail = [Result]()
+    
+    
+    var numberOfitems: Int {
+        return arrSongsAlbumDetail.count
+    }
+    
+    func getListSongsAlbum(term: String){
+        NetworkManager.shared.getListSongsAlbum(term: term).then({
+            print($0)
+            print(term)
+            self.arrSongsAlbumDetail = $0
+            self.delegate?.reloadData()
+        }).catch({
+            print($0)
+        })
+    }
+    
+}
